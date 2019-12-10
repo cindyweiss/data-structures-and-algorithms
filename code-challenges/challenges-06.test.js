@@ -118,7 +118,8 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
 
-};
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -194,7 +195,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-describe.only('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
@@ -204,7 +205,7 @@ describe.only('Testing challenge 3', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
+describe.only('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
