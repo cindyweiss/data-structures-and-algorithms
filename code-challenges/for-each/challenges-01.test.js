@@ -142,12 +142,15 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   arr.forEach((num) => {
-    if (num % 3 === 0) arr.push(fizz);
-    else if (num % 5 === 0) arr.push(buzz);
-    else if (num % 3 === 0 && num % 5 === 0) arr.push(fizzbuzz);
-    else arr.push(num);
-  });
-  console.log(arr);
+    if (num % 3 === 0) {
+      arr.push('Fizz');
+    } else if (num % 5 === 0) {
+      arr.push('Buzz');
+    } else if (num % 3 === 0 && num % 5 === 0) {
+      arr.push('Fizz Buzz');
+    } else arr.push(num);
+  })
+  return (arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
