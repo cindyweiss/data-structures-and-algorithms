@@ -141,16 +141,17 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
+  let result = []
   arr.forEach((num) => {
-    if (num % 3 === 0) {
-      arr.push('Fizz');
+    if (num % 3 === 0 && num % 5 === 0) {
+      result.push('Fizz Buzz');
+    } else if (num % 3 === 0) {
+      result.push('Fizz');
     } else if (num % 5 === 0) {
-      arr.push('Buzz');
-    } else if (num % 3 === 0 && num % 5 === 0) {
-      arr.push('Fizz Buzz');
-    } else arr.push(num);
+      result.push('Buzz');
+    } else result.push(num);
   })
-  return (arr);
+  return (result);
 };
 
 /* ------------------------------------------------------------------------------------------------
