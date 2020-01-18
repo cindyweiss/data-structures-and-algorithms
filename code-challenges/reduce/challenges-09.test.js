@@ -73,7 +73,10 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((names, characters) => {
+    names.push(characters.name);
+    return names
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,8 +88,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  const newArr = str.split('');
+  return newArr.reduce((newStr, char) => {
+    return char + newStr
+  }, '')
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -138,7 +145,13 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  return arr.reduce((value, char) => {
+    if (char.children !== undefined) {
+      value += char.children.length;
+    }
+    return value;
+  }, 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,7 +163,10 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let total = arr.reduce((sum, num) => {
+    return sum += num;
+  }, 0);
+  return total / arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -171,7 +187,11 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((count, num) => {
+    if (isPrime(num)) {
+      count++
+    } return count;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
