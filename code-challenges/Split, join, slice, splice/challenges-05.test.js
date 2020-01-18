@@ -15,9 +15,10 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  for (let i = 0; i < str.length; i++) {
-    let pencil = str.slice([1], str.length);
-    result.push(pencil[i]);
+  let length = str.length + 1;
+  for (let i = 0; i < length; i++) {
+    result.push(str);
+    str = str.slice(1);
   }
   return result;
 };
@@ -85,7 +86,20 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(item => {
+    if (item.includes('8 pounds') || item.includes('2 pounds') || item.includes('4 pounds')) {
+      result.push(item.slice(9));
+    }
+    if (item.includes('16 cups') || item.includes('1 pound')) {
+      result.push(item.slice(8));
+    }
+    if (item.includes('6 gallons') || item.includes('2 gallons')) {
+      result.push(item.slice(10));
+    }
+    if (item.includes('1 medium-sized')) {
+      result.push(item.slice(15));
+    }
+  })
   return result;
 };
 
@@ -99,7 +113,7 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
   return result;
 };
 
@@ -115,7 +129,10 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(step => {
+    let action = step.split(' ');
+    result.push(action[0]);
+  })
   return result;
 };
 
