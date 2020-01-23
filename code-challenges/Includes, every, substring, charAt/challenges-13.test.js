@@ -10,7 +10,14 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
-};
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    console.log(newArray);
+    newArray.push(arr[i].charAt(0));
+  }
+  return newArray;
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,6 +29,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
